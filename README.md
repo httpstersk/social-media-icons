@@ -2,9 +2,7 @@
 
 > A Polymer element with a set of scalable social media icons
 
-## Demo
-
-[Check it live!](http://hejty.github.io/hejty/social-media/)
+![alt tag](http://www.hejty.com/github/social-media-320.png)
 
 ## Install
 
@@ -44,6 +42,12 @@ Attribute       | Options                                                   | De
 `size`          | *int*                                                     | `32`                         	| The size of the icon
 `color`         | *hex*                                                  	| ``     						| The fill color
 `href`          | *string*                                                  | `#`                           | The target URL
+
+## Examples:
+
+```html
+<social-media icon="github" color="#bada55" size="320" href="https://github.com/hejty"></social-media>
+```
 
 ## Contributing
 

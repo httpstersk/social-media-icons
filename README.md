@@ -40,8 +40,8 @@ Attribute       | Options                                                   | De
 ---             | ---                                                       | ---                           | ---
 `icon`         	| `dribbble`, `facebook`, `github`, `googleplus`, `lastfm`, `reddit`, `soundcloud`, `tumblr`, `soundcloud`, `twitter`,  `twitter`    | `github`                      | Logo
 `size`          | *int*                                                     | `32`                         	| The size of the icon
-`color`         | *hex*                                                  	| ``     						| The fill color
-`href`          | *string*                                                  | `#`                           | The target URL
+`color`         | *hex*                                                  	| -     						| The fill color
+`href`          | *string*                                                  | -                           | The target URL
 
 ## Examples:
 

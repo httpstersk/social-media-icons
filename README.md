@@ -4,6 +4,10 @@
 
 ![alt tag](http://www.hejty.com/github/social-media-320.png)
 
+## Demo
+
+[Check it live!](http://hejty.github.io/hejty/social-media/)
+
 ## Install
 
 Install the component using [Bower](http://bower.io/):
@@ -38,7 +42,7 @@ Or [download as ZIP](https://github.com/hejty/social-media/archive/master.zip).
 
 Attribute       | Options                                                   | Default                       | Description
 ---             | ---                                                       | ---                           | ---
-`icon`         	| `dribbble`, `facebook`, `github`, `googleplus`, `lastfm`, `reddit`, `soundcloud`, `tumblr`, `twitter`    | `github`                      | Logo
+`icon`         	| `dribbble`, `facebook`, `github`, `googleplus`, `lastfm`, `soundcloud`, `tumblr`, `twitter`    | `github`                      | Logo
 `size`          | *int*                                                     | `32`                         	| The size of icon
 `color`         | *hex*                                                  	| -     						| The fill color
 `href`          | *string*                                                  | -                           | The target URL

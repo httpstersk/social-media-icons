@@ -19,7 +19,7 @@ Or [download as ZIP](https://github.com/hejty/social-media/archive/master.zip).
 1. Import Web Components' polyfill:
 
     ```html
-    <script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.1.4/platform.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.2.3/platform.js"></script>
     ```
 
 2. Import Custom Element:

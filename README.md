@@ -42,7 +42,7 @@ Or [download as ZIP](https://github.com/hejty/social-media/archive/master.zip).
 
 Attribute       | Options                                                   | Default                       | Description
 ---             | ---                                                       | ---                           | ---
-`icon`         	| `dribbble`, `facebook`, `github`, `googleplus`, `lastfm`, `soundcloud`, `tumblr`, `twitter`    | `github`                      | Logo
+`icon`         	| `behance`, `dribbble`, `facebook`, `github`, `googleplus`, `instagram`, `lastfm`, `pinterest`, `soundcloud`, `tumblr`, `twitter`    | `github`                      | Logo
 `size`          | *int*                                                     | `32`                         	| The size of icon
 `color`         | *hex*                                                  	| -     						| The fill color
 `href`          | *string*                                                  | -                           | The target URL

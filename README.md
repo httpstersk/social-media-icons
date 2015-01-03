@@ -1,4 +1,4 @@
-# &lt;social-media&gt;
+# &lt;social-media-icons&gt;
 
 > A Polymer element with a set of scalable social media icons
 
@@ -6,36 +6,36 @@
 
 ## Demo
 
-[Check it live!](http://hejty.github.io/hejty/social-media/)
+[Check it live!](http://hejty.github.io/hejty/social-media-icons/)
 
 ## Install
 
 Install the component using [Bower](http://bower.io/):
 
 ```sh
-$ bower install social-media --save
+$ bower install social-media-icons --save
 ```
 
-Or [download as ZIP](https://github.com/hejty/social-media/archive/master.zip).
+Or [download as ZIP](https://github.com/hejty/social-media-icons/archive/master.zip).
 
 ## Usage
 
 1. Import Web Components' polyfill:
 
     ```html
-    <script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.2.3/platform.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.5.2/webcomponents.min.js"></script>
     ```
 
 2. Import Custom Element:
 
     ```html
-    <link rel="import" href="src/social-media.html">
+    <link rel="import" href="social-media-icons/social-media-icons.html">
     ```
 
 3. Start using it!
 
     ```html
-    <social-media></social-media>
+    <social-media-icons></social-media-icons>
     ```
 
 ## Options
@@ -50,7 +50,7 @@ Attribute       | Options                                                   | De
 ## Examples:
 
 ```html
-<social-media icon="github" color="#bada55" size="320" href="https://github.com/hejty"></social-media>
+<social-media-icons icon="github" color="#bada55" size="320" href="https://github.com/hejty"></social-media-icons>
 ```
 
 ## Contributing
@@ -59,11 +59,11 @@ Attribute       | Options                                                   | De
 2. Create your feature branch: `git checkout -b my-new-feature`
 3. Commit your changes: `git commit -m 'Add some feature'`
 4. Push to the branch: `git push origin my-new-feature`
-5. Submit a pull request :D
+5. Submit a pull request ;)
 
 ## History
 
-For detailed changelog, check [Releases](https://github.com/hejty/social-media/releases).
+For detailed changelog, check [Releases](https://github.com/hejty/social-media-icons/releases).
 
 ## License
 

@@ -1,12 +1,12 @@
 {
-  "name": "social-media",
-  "version": "0.0.1",
-  "homepage": "https://github.com/hejty/social-media",
+  "name": "social-media-icons",
+  "version": "0.0.2",
+  "homepage": "https://github.com/hejty/social-media-icons",
   "authors": [
     "Lubos Belak"
   ],
   "description": "A Polymer element with a set of scalable social media icons",
-  "main": "src/social-media.html",
+  "main": "social-media-icons.html",
   "keywords": [
     "web-components",
     "polymer",

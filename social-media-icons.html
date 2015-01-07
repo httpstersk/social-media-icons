@@ -1,14 +1,26 @@
-<link rel="import" href="../../polymer/polymer.html">
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+A Polymer element with a set of scalable social media icons
+
+##### Example
+
+<social-media-icons icon="github" color="#bada55" size="320" href="https://github.com/hejty"></social-media-icons>
+
+@element social-media-icons
+@blurb A Polymer element with a set of scalable social media icons
+@status alpha
+@homepage https://github.com/hejty/social-media-icons
+-->
 
 <polymer-element name="social-media-icons" attributes="icon size color href">
 
 	<template>
-
 		<link rel="stylesheet" href="social-media-icons.css">
 
 		<div id="svg">
 			<svg preserveAspectRatio="xMinYMin meet" width="{{size}}" height="{{size}}" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
-				<a xlink:href="{{href}}">
+				<a xlink:href="{{href}}" id="link">
 					<template if="{{icon == 'behance'}}">
 						<path id="behance" fill="{{color}}" d="M12.9,14.9c0,0,3-0.2,3-3.9c0-3.7-2.5-5.5-5.6-5.5H0v20.7h10.3c0,0,6.3,0.2,6.3-6.1C16.6,20,16.9,14.9,12.9,14.9z M4.6,9.1 h5.8c0,0,1.4,0,1.4,2.2c0,2.2-0.8,2.5-1.8,2.5H4.6V9.1z M10,22.4H4.6v-5.5h5.8c0,0,2.1,0,2.1,2.8C12.4,22.2,10.9,22.4,10,22.4z M25,10.7c-7.6,0-7.6,7.9-7.6,7.9s-0.5,7.9,7.6,7.9c0,0,6.8,0.4,6.8-5.5h-3.5c0,0,0.1,2.2-3.2,2.2c0,0-3.5,0.2-3.5-3.6h10.3 C31.9,19.7,33.1,10.7,25,10.7z M28.1,16.9h-6.5c0,0,0.4-3.2,3.5-3.2C28.2,13.7,28.1,16.9,28.1,16.9z M29,6.7h-8.2v2.5H29L29,6.7 L29,6.7z"></path>
 					</template>
@@ -55,20 +67,49 @@
 				</a>
 			</svg>
 		</div>
-
 	</template>
 
     <script>
-
         Polymer('social-media-icons', {
+			/**
+			* The `icon` attribute grabs a vector-shaped logo of social media you choose
+			*
+			* @attribute icon
+			* @type string
+			* @default 'github'
+			*/
 			icon: 'github',
-			size: '32',
-			href: '#',
-			ready: function() {
-				if(!this.href) {
-					this.href = this.$.link.removeAttribute('xlink:href');
-				}
 
+			/**
+			* The `size` attribute sets a size of an element
+			*
+			* @attribute size
+			* @type int
+			* @default 32
+			*/
+			size: '32',
+
+			/**
+			* The `color` attribute fills the shape with a color you choose
+			*
+			* @attribute color
+			* @type hex
+			* @default #000000
+			*/
+			color: '#000000',
+
+			/**
+			*  The `href` attribute sets the target URL
+			*
+			* @attribute href
+			* @type string
+			* @default null
+			*/
+			href: null,
+
+			// Fires when the `<social-media-icons>` has been fully prepared
+			ready: function() {
+				// Fill icons with brand colors, if `color` attribute is not defined
 				if(!this.color && this.icon == 'behance') {
 					return this.$.behance.setAttribute('fill', '#005CFF');
 				}
@@ -112,9 +153,14 @@
 				if(!this.color && this.icon == 'twitter') {
 					return this.$.twitter.setAttribute('fill', '#00ACED');
 				}
+
+				// Unwrap/Remove `<a>` tag, if an `href` attribute is not defined
+				if(!this.href) {
+					var wrapper = this.$.link;
+					wrapper.outerHTML = wrapper.innerHTML;
+				}
 			}
 		});
-
     </script>
 
 </polymer-element>

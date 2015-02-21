@@ -42,7 +42,7 @@ Or [download as ZIP](https://github.com/hejty/social-media-icons/archive/master.
 
 Attribute       | Options                                                   | Default                       | Description
 ---             | ---                                                       | ---                           | ---
-`icon`         	| `behance`, `dribbble`, `facebook`, `github`, `googleplus`, `instagram`, `lastfm`, `linkedin`, `pinterest`, `tumblr`, `twitter`, `youtube`    | `github`                      | The `icon` attribute grabs a vector-shaped logo of social media you choose
+`icon`         	| `behance`, `dribbble`, `facebook`, `github`, `googleplus`, `instagram`, `lastfm`, `linkedin`, `pinterest`, `tumblr`, `twitter`, `youtube`, `vimeo`    | `github`                      | The `icon` attribute grabs a vector-shaped logo of social media you choose
 `size`          | *int*                                                     | `32`                         	| The `size` attribute sets a size of an element
 `color`         | *hex*                                                  	| -     						| The `color` attribute fills the shape with a color you choose
 `href`          | *string*                                                  | -                             | The `href` attribute sets the target URL

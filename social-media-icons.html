@@ -94,67 +94,41 @@ A Polymer element with a set of scalable social media icons
 			*
 			* @attribute color
 			* @type hex
-			* @default #000000
+			* @default undefined
 			*/
-			color: '#000000',
+			color: undefined,
 
 			/**
 			*  The `href` attribute sets the target URL
 			*
 			* @attribute href
 			* @type string
-			* @default null
+			* @default undefined
 			*/
-			href: null,
+			href: undefined,
 
 			// Fires when the `<social-media-icons>` has been fully prepared
 			ready: function() {
-				// Fill icons with brand colors, if `color` attribute is not defined
-				if(!this.color && this.icon == 'behance') {
-					return this.$.behance.setAttribute('fill', '#005CFF');
+				// If `color` is not defined in Light DOM, fill the icon with brand color
+				if (!this.color) {
+					switch (this.icon) {
+						case 'behance':		this.color = '#005CFF'; break;
+						case 'dribbble':	this.color = '#EA4C89'; break;
+						case 'facebook':	this.color = '#3B5998'; break;
+						case 'github':		this.color = '#171515'; break;
+						case 'googleplus':	this.color = '#C63D2D'; break;
+						case 'instagram':	this.color = '#005CFF'; break;
+						case 'lastfm':		this.color = '#D51007'; break;
+						case 'pinterest':	this.color = '#CB2027'; break;
+						case 'soundcloud':	this.color = '#FF6600'; break;
+						case 'tumblr':		this.color = '#32506D'; break;
+						case 'twitter':		this.color = '#00ACED'; break;
+						default:			this.color = '#000000'; break;
+					}
+					return this.color;
 				}
 
-				if(!this.color && this.icon == 'dribbble') {
-					return this.$.dribbble.setAttribute('fill', '#EA4C89');
-				}
-
-				if(!this.color && this.icon == 'facebook') {
-					return this.$.facebook.setAttribute('fill', '#3B5998');
-				}
-
-				if(!this.color && this.icon == 'github') {
-					return this.$.github.setAttribute('fill', '#171515');
-				}
-
-				if(!this.color && this.icon == 'googleplus') {
-					return this.$.googleplus.setAttribute('fill', '#C63D2D');
-				}
-
-				if(!this.color && this.icon == 'instagram') {
-					return this.$.instagram.setAttribute('fill', '#517FA4');
-				}
-
-				if(!this.color && this.icon == 'lastfm') {
-					return this.$.lastfm.setAttribute('fill', '#D51007');
-				}
-
-				if(!this.color && this.icon == 'pinterest') {
-					return this.$.pinterest.setAttribute('fill', '#CB2027');
-				}
-
-				if(!this.color && this.icon == 'soundcloud') {
-					return this.$.soundcloud.setAttribute('fill', '#FF6600');
-				}
-
-				if(!this.color && this.icon == 'tumblr') {
-					return this.$.tumblr.setAttribute('fill', '#32506D');
-				}
-
-				if(!this.color && this.icon == 'twitter') {
-					return this.$.twitter.setAttribute('fill', '#00ACED');
-				}
-
-				// Unwrap/Remove `<a>` tag, if an `href` attribute is not defined
+				// If an `href` attribute is not defined, unwrap/remove `<a>` tag
 				if(!this.href) {
 					var wrapper = this.$.link;
 					wrapper.outerHTML = wrapper.innerHTML;

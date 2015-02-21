@@ -2,7 +2,7 @@
 
 > A Polymer element with a set of scalable social media icons
 
-![alt tag](http://www.hejty.com/github/social-media-320.png)
+![alt tag](http://hejty.github.io/hejty/social-media-icons/preview.png)
 
 ## Demo
 
@@ -42,7 +42,7 @@ Or [download as ZIP](https://github.com/hejty/social-media-icons/archive/master.
 
 Attribute       | Options                                                   | Default                       | Description
 ---             | ---                                                       | ---                           | ---
-`icon`         	| `behance`, `dribbble`, `facebook`, `github`, `googleplus`, `instagram`, `lastfm`, `pinterest`, `soundcloud`, `tumblr`, `twitter`    | `github`                      | The `icon` attribute grabs a vector-shaped logo of social media you choose
+`icon`         	| `behance`, `dribbble`, `facebook`, `github`, `googleplus`, `instagram`, `lastfm`, `pinterest`, `tumblr`, `twitter`    | `github`                      | The `icon` attribute grabs a vector-shaped logo of social media you choose
 `size`          | *int*                                                     | `32`                         	| The `size` attribute sets a size of an element
 `color`         | *hex*                                                  	| -     						| The `color` attribute fills the shape with a color you choose
 `href`          | *string*                                                  | -                             | The `href` attribute sets the target URL

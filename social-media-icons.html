@@ -40,10 +40,10 @@ A Polymer element with a set of scalable social media icons
 
 					<template if="{{icon == 'flipboard'}}">
 						<g id="flipboard">
-							<rect fill="{{color}}" width="32" height="32"/>
-							<polygon fill="#FFFFFF" points="19.3,6.4 12.9,6.4 6.4,6.4 6.4,12.7 6.4,19.1 6.4,25.6 12.8,25.6 12.8,19.2 19.2,19.2 19.2,12.8 25.6,12.8 25.6,6.4"/>
-							<polygon fill="#F9E9E9" points="19.3,6.4 12.8,6.4 12.8,12.8 19.3,12.8 25.6,12.8 25.6,6.4"/>
-							<rect x="12.8" y="12.8" fill="#F9D3D3" width="6.4" height="6.4"/>
+							<rect fill="{{color}}" width="{{size}}" height="{{size}}"/>
+							<polygon opacity="0.9" fill="#FFFFFF" points="19.3,6.4 12.8,6.4 12.8,12.8 19.3,12.8 25.6,12.8 25.6,6.4"/>
+							<rect x="12.8" y="12.8" opacity="0.85" fill="#FFFFFF" width="6.4" height="6.4"/>
+							<rect x="6.3" y="6.4" fill="#FFFFFF" width="6.5" height="19.2"/>
 						</g>
 					</template>
 

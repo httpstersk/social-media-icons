@@ -2,7 +2,7 @@
 
 > A Polymer element with a set of scalable social media icons
 
-![alt tag](http://hejty.github.io/hejty/social-media-icons/preview.png)
+![alt tag](http://hejty.github.io/demos/social-media-icons/preview.png)
 
 ## Demo
 

@@ -23,7 +23,7 @@ Or [download as ZIP](https://github.com/hejty/social-media-icons/archive/master.
 1. Import Web Components' polyfill:
 
     ```html
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.5.2/webcomponents.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.7/webcomponents-lite.min.js"></script>
     ```
 
 2. Import Custom Element:
@@ -42,7 +42,7 @@ Or [download as ZIP](https://github.com/hejty/social-media-icons/archive/master.
 
 Attribute       | Options                                                   | Default                       | Description
 ---             | ---                                                       | ---                           | ---
-`icon`         	| `behance`, `dribbble`, `facebook`, `flipboard`, `github`, `googleplus`, `instagram`, `jsfiddle`, `lastfm`, `linkedin`, `medium`, `quora`, `pinterest`, `skype`, `spotify`, `stumbleupon`, `tumblr`, `twitter`, `youtube`, `vimeo`, `vine`    | `github`                      | The `icon` attribute grabs a vector-shaped logo of social media you choose
+`icon`         	| `dribbble`, `facebook`, `github`, `googleplus`, `instagram`, `lastfm`, `linkedin`, `medium`, `quora`, `pinterest`, `skype`, `spotify`, `stumbleupon`, `tumblr`, `twitter`, `youtube`, `vimeo`, `vine`    | `github`                      | The `icon` attribute grabs a vector-shaped logo of social media you choose
 `size`          | *int*                                                     | `32`                         	| The `size` attribute sets a size of an element
 `color`         | *hex*                                                  	| -     						| The `color` attribute fills the shape with a color you choose
 `href`          | *string*                                                  | -                             | The `href` attribute sets the target URL

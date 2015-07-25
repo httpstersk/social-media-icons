@@ -6,7 +6,7 @@
 
 ## Demo
 
-[Check it live!](http://hejty.github.io/hejty/social-media-icons/)
+[Check it live!](http://hejty.github.io/demos/social-media-icons/)
 
 ## Install
 

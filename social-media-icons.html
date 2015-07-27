@@ -31,7 +31,7 @@ A Polymer element with a set of scalable social media icons
 		<div>
 			<svg id="svg" preserveAspectRatio="xMinYMin meet" style$="{{_setWidthAndHeight(size)}}" width$="{{size}}" height$="{{size}}" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" aria-labelledby="title"
 			role="img">
-				<title id="title"><span>{{icon}}</span> Logo</title>
+				<title>[[_setTitle(icon)]]</title>
 			</svg>
 		</div>
 
@@ -41,6 +41,10 @@ A Polymer element with a set of scalable social media icons
 
 <script>
 	(function() {
+
+		function capitalizeFirstLetter(string) {
+			return string.charAt(0).toUpperCase() + string.slice(1);
+		}
 
 		Polymer({
 
@@ -111,6 +115,10 @@ A Polymer element with a set of scalable social media icons
 
 			_setWidthAndHeight: function(size) {
 				return 'width: ' + size + 'px; height: ' + size + 'px;';
+			},
+
+			_setTitle: function(icon) {
+				return capitalizeFirstLetter(icon) + ' Logo';
 			},
 
 			_getPath: function() {

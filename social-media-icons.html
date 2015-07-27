@@ -9,27 +9,22 @@ A Polymer element with a set of scalable social media icons
 
 @element social-media-icons
 @blurb A Polymer element with a set of scalable social media icons
-@version 1.0.0
+@version 1.0.1
 @homepage https://github.com/hejty/social-media-icons
 -->
 
 <dom-module id="social-media-icons">
 
 	<style>
-		svg {
-			height: auto;
-			width: 100%;
-		}
-
-		title:first-letter {
-			text-transform: capitalize;
+		:host {
+			display: inline-block;
 		}
 	</style>
 
 	<template>
 
 		<div>
-			<svg id="svg" preserveAspectRatio="xMinYMin meet" style$="{{_setWidthAndHeight(size)}}" width$="{{size}}" height$="{{size}}" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" aria-labelledby="title"
+			<svg id="svg" preserveAspectRatio="xMinYMin meet" style$="[[_setWidthAndHeight(size)]]" width$="{{size}}" height$="{{size}}" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" aria-labelledby="title"
 			role="img">
 				<title>[[_setTitle(icon)]]</title>
 			</svg>

@@ -28,13 +28,10 @@ A Polymer element with a set of scalable social media icons
 
 	<template>
 
-		<div id="svg">
-			<svg preserveAspectRatio="xMinYMin meet" style$="{{setWidthAndHeight(size)}}" width$="{{size}}" height$="{{size}}" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" aria-labelledby="title"
+		<div>
+			<svg id="svg" preserveAspectRatio="xMinYMin meet" style$="{{_setWidthAndHeight(size)}}" width$="{{size}}" height$="{{size}}" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" aria-labelledby="title"
 			role="img">
 				<title id="title"><span>{{icon}}</span> Logo</title>
-				<a xlink:href$="{{href}}" id="link">
-					<path fill$="{{color}}" d$="{{path}}"></path>
-				</a>
 			</svg>
 		</div>
 
@@ -64,7 +61,7 @@ A Polymer element with a set of scalable social media icons
 					value: 'github',
 					notify: true,
 					reflectToAttribute: true,
-					observer: 'getPath'
+					observer: '_getPath'
 				},
 
 				/**
@@ -106,20 +103,17 @@ A Polymer element with a set of scalable social media icons
 
 				href: {
 					type: String,
+					value: '#',
 					notify: true,
 					reflectToAttribute: true
-				},
+				}
 			},
 
-			getViewBox: function(size) {
-				return ['0', '0', size, size].join(' ');
-			},
-
-			setWidthAndHeight: function(size) {
+			_setWidthAndHeight: function(size) {
 				return 'width: ' + size + 'px; height: ' + size + 'px;';
 			},
 
-			getPath: function() {
+			_getPath: function() {
 				switch (this.icon) {
 					case 'dribbble':
 						this.path =
@@ -213,6 +207,19 @@ A Polymer element with a set of scalable social media icons
 				}
 			},
 
+			_renderSVG: function() {
+				var svg = Polymer.dom(this.$.svg);
+				var link = document.createElementNS('http://www.w3.org/2000/svg', 'a');
+				var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+
+				link.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', this.href);
+				svg.appendChild(link);
+
+				Polymer.dom(path).setAttribute('fill', this.color);
+				Polymer.dom(path).setAttribute('d', this.path);
+				link.appendChild(path);
+			},
+
 			// Fires when the `<social-media-icons>` has been fully prepared
 			ready: function() {
 				// If `color` is not defined in Light DOM, fill the icon with brand color
@@ -279,14 +286,9 @@ A Polymer element with a set of scalable social media icons
 						    this.color = '#000000';
 						    break;
 					}
-					return this.color;
 				}
 
-				// If an `href` attribute is not defined, unwrap/remove `<a>` tag
-				if (!this.href) {
-					var wrapper = this.$.link;
-					wrapper.outerHTML = wrapper.innerHTML;
-				}
+				this._renderSVG();
 			}
 		});
 

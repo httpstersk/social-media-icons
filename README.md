@@ -40,17 +40,18 @@ Or [download as ZIP](https://github.com/hejty/social-media-icons/archive/master.
 
 ## Options
 
-Attribute       | Options                                                   | Default                       | Description
----             | ---                                                       | ---                           | ---
+Attribute       | Options                                         | Default                       | Description
+---             | ---                                             | ---                           | ---
 `icon`         	| `dribbble`, `facebook`, `github`, `googleplus`, `instagram`, `lastfm`, `linkedin`, `medium`, `quora`, `pinterest`, `skype`, `spotify`, `stumbleupon`, `tumblr`, `twitter`, `youtube`, `vimeo`, `vine`    | `github`                      | The `icon` attribute grabs a vector-shaped logo of social media you choose
-`size`          | *int*                                                     | `32`                         	| The `size` attribute sets a size of an element
-`color`         | *hex*                                                  	| -     						| The `color` attribute fills the shape with a color you choose
-`href`          | *string*                                                  | -                             | The `href` attribute sets the target URL
+`size`          | *int*                                           | `32`                         	| The `size` attribute sets a size of an element
+`color`         | *hex*                                           | -     						            | The `color` attribute fills the shape with a color you choose
+`href`          | *string*                                        | -                             | The `href` attribute sets the target URL
+`newTab`        | *boolean*                                       | false                         | The `newTab` attribute opens the linked icon on new browser tab
 
 ## Example
 
 ```html
-<social-media-icons icon="github" color="#bada55" size="320" href="https://github.com/hejty"></social-media-icons>
+<social-media-icons icon="github" color="#bada55" size="320" href="https://github.com/hejty" new-tab></social-media-icons>
 ```
 
 ## Contributing

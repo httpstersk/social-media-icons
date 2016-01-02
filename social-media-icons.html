@@ -5,11 +5,11 @@ A Polymer element with a set of scalable social media icons
 
 ##### Example
 
-<social-media-icons icon="github" color="#bada55" size="320" href="https://github.com/hejty"></social-media-icons>
+<social-media-icons icon="github" color="#bada55" size="320" href="https://github.com/hejty" new-tab></social-media-icons>
 
 @element social-media-icons
 @blurb A Polymer element with a set of scalable social media icons
-@version 1.0.2
+@version 1.0.3
 @homepage https://github.com/hejty/social-media-icons
 -->
 
@@ -105,7 +105,20 @@ A Polymer element with a set of scalable social media icons
 					value: '#',
 					notify: true,
 					reflectToAttribute: true
-				}
+				},
+
+        /**
+         *  The `new-tab` opens the linked icon on new browser tab
+         *
+         * @attribute new-tab
+         * @type boolean
+         * @default false
+         */
+
+        newTab: {
+            type: Boolean,
+            value: false
+        }
 			},
 
 			_setWidthAndHeight: function(size) {
@@ -216,6 +229,11 @@ A Polymer element with a set of scalable social media icons
 				var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
 
 				link.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', this.href);
+
+				if (this.href && this.newTab) {
+						link.setAttribute('target', '_blank');
+				}
+
 				svg.appendChild(link);
 
 				Polymer.dom(path).setAttribute('fill', this.color);

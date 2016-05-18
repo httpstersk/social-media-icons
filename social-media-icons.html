@@ -102,7 +102,7 @@ A Polymer element with a set of scalable social media icons
 
 				href: {
 					type: String,
-					value: '#',
+					value: '',
 					notify: true,
 					reflectToAttribute: true
 				},
@@ -231,14 +231,18 @@ A Polymer element with a set of scalable social media icons
 				link.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', this.href);
 
 				if (this.href && this.newTab) {
-						link.setAttribute('target', '_blank');
+					link.setAttribute('target', '_blank');
 				}
-
-				svg.appendChild(link);
 
 				Polymer.dom(path).setAttribute('fill', this.color);
 				Polymer.dom(path).setAttribute('d', this.path);
-				link.appendChild(path);
+
+				if (this.href) {
+					svg.appendChild(link);
+					link.appendChild(path);
+				} else {
+					svg.appendChild(path);
+				}
 			},
 
 			// Fires when the `<social-media-icons>` has been fully prepared

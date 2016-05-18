@@ -121,6 +121,10 @@ A Polymer element with a set of scalable social media icons
 				}
 			},
 
+			observers: [
+				'_renderSVG(icon, size, color, href, newTab)'
+			],
+
 			_setWidthAndHeight: function(size) {
 				return 'width: ' + size + 'px; height: ' + size + 'px;';
 			},
@@ -227,6 +231,10 @@ A Polymer element with a set of scalable social media icons
 				var svg = Polymer.dom(this.$.svg);
 				var link = document.createElementNS('http://www.w3.org/2000/svg', 'a');
 				var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+
+				if (svg.lastChild.tagName === 'path' || svg.lastChild.tagName === 'a') {
+					svg.removeChild(svg.lastChild);
+				}
 
 				link.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', this.href);
 

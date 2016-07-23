@@ -47,6 +47,7 @@ Attribute       | Options                                         | Default     
 `color`         | *hex*                                           | -     						            | The `color` attribute fills the shape with a color you choose
 `href`          | *string*                                        | -                             | The `href` attribute sets the target URL
 `newTab`        | *boolean*                                       | false                         | The `newTab` attribute opens the linked icon on new browser tab
+`title`         | *string*                                        | -                             | The `title` attribute sets the title that will be displayed as alternative text or hint
 
 ## Example
 

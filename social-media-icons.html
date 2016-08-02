@@ -9,7 +9,7 @@ A Polymer element with a set of scalable social media icons
 
 @element social-media-icons
 @blurb A Polymer element with a set of scalable social media icons
-@version 1.0.3
+@version 1.2.0
 @homepage https://github.com/hejty/social-media-icons
 -->
 
@@ -24,8 +24,7 @@ A Polymer element with a set of scalable social media icons
 		</style>
 
 		<div>
-			<svg id="svg" preserveAspectRatio="xMinYMin meet" style$="[[_setWidthAndHeight(size)]]" width$="{{size}}" height$="{{size}}" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" aria-labelledby="title"
-			role="img">
+			<svg id="svg" preserveAspectRatio="xMinYMin meet" style$="[[_setWidthAndHeight(size)]]" width$="{{size}}" height$="{{size}}" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" aria-labelledby="title" role="img">
 				<title>[[_getTitle(title, icon)]]</title>
 			</svg>
 		</div>
@@ -102,7 +101,7 @@ A Polymer element with a set of scalable social media icons
 
 				href: {
 					type: String,
-					value: '#',
+					value: '',
 					notify: true,
 					reflectToAttribute: true
 				},
@@ -120,19 +119,23 @@ A Polymer element with a set of scalable social media icons
 					reflectToAttribute: true
 				},
 
-		        /**
-		         *  The `newTab` attribute opens the linked icon on new browser tab
-		         *
-		         * @attribute newTab
-		         * @type boolean
-		         * @default false
-		         */
+				/**
+				 *  The `newTab` attribute opens the linked icon on new browser tab
+				 *
+				 * @attribute newTab
+				 * @type boolean
+				 * @default false
+				 */
 
-		        newTab: {
-		            type: Boolean,
-		            value: false
-		        }
+				newTab: {
+					type: Boolean,
+					value: false
+				}
 			},
+
+			observers: [
+				'_renderSVG(icon, size, color, href, newTab)'
+			],
 
 			_setWidthAndHeight: function(size) {
 				return 'width: ' + size + 'px; height: ' + size + 'px;';
@@ -143,7 +146,7 @@ A Polymer element with a set of scalable social media icons
 			},
 
 			_getTitle: function(title, icon) {
-				return ( icon.length > 0 ) ? this.title : _setTitle(icon);
+				return (icon.length > 0) ? this.title : _setTitle(icon);
 			},
 
 			_getPath: function() {
@@ -245,17 +248,27 @@ A Polymer element with a set of scalable social media icons
 				var link = document.createElementNS('http://www.w3.org/2000/svg', 'a');
 				var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
 
+				if (svg.lastChild.tagName === 'path' || svg.lastChild.tagName === 'a') {
+					svg.removeChild(svg.lastChild);
+				}
+
 				link.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', this.href);
 
 				if (this.href && this.newTab) {
-						link.setAttribute('target', '_blank');
+					link.setAttribute('target', '_blank');
 				}
 
 				svg.appendChild(link);
 
 				Polymer.dom(path).setAttribute('fill', this.color);
 				Polymer.dom(path).setAttribute('d', this.path);
-				link.appendChild(path);
+
+				if (this.href) {
+					svg.appendChild(link);
+					link.appendChild(path);
+				} else {
+					svg.appendChild(path);
+				}
 			},
 
 			// Fires when the `<social-media-icons>` has been fully prepared
@@ -264,65 +277,65 @@ A Polymer element with a set of scalable social media icons
 				if (!this.color) {
 					switch (this.icon) {
 						case 'dribbble':
-						    this.color = '#EA4C89';
-						    break;
+							this.color = '#EA4C89';
+							break;
 						case 'facebook':
-						    this.color = '#3B5998';
-						    break;
+							this.color = '#3B5998';
+							break;
 						case 'github':
-						    this.color = '#171515';
-						    break;
+							this.color = '#171515';
+							break;
 						case 'googleplus':
-						    this.color = '#DB4E3F';
-						    break;
+							this.color = '#DB4E3F';
+							break;
 						case 'instagram':
-						    this.color = '#3F729B';
-						    break;
+							this.color = '#3F729B';
+							break;
 						case 'jsfiddle':
-						    this.color = '#4679BD';
-						    break;
+							this.color = '#4679BD';
+							break;
 						case 'lastfm':
-						    this.color = '#D51007';
-						    break;
+							this.color = '#D51007';
+							break;
 						case 'linkedin':
-						    this.color = '#0077B5';
-						    break;
+							this.color = '#0077B5';
+							break;
 						case 'medium':
-						    this.color = '#231F20';
-						    break;
+							this.color = '#231F20';
+							break;
 						case 'quora':
-						    this.color = '#A72723';
-						    break;
+							this.color = '#A72723';
+							break;
 						case 'pinterest':
-						    this.color = '#CB2027';
-						    break;
+							this.color = '#CB2027';
+							break;
 						case 'skype':
-						    this.color = '#00AFF0';
-						    break;
+							this.color = '#00AFF0';
+							break;
 						case 'spotify':
-						    this.color = '#6AE368';
-						    break;
+							this.color = '#6AE368';
+							break;
 						case 'stumbleupon':
-						    this.color = '#EF4E23';
-						    break;
+							this.color = '#EF4E23';
+							break;
 						case 'tumblr':
-						    this.color = '#35465C';
-						    break;
+							this.color = '#35465C';
+							break;
 						case 'twitter':
-						    this.color = '#55ACEE';
-						    break;
+							this.color = '#55ACEE';
+							break;
 						case 'youtube':
-						    this.color = '#E52D27';
-						    break;
+							this.color = '#E52D27';
+							break;
 						case 'vimeo':
-						    this.color = '#1AB7EA';
-						    break;
+							this.color = '#1AB7EA';
+							break;
 						case 'vine':
-						    this.color = '#00B489';
-						    break;
+							this.color = '#00B489';
+							break;
 						default:
-						    this.color = '#000000';
-						    break;
+							this.color = '#000000';
+							break;
 					}
 				}
 

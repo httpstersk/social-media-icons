@@ -45,14 +45,12 @@ Attribute       | Options                                         | Default     
 `icon`         	| `dribbble`, `facebook`, `github`, `googleplus`, `instagram`, `lastfm`, `linkedin`, `medium`, `quora`, `pinterest`, `skype`, `spotify`, `stumbleupon`, `tumblr`, `twitter`, `youtube`, `vimeo`, `vine`    | `github`                      | The `icon` attribute grabs a vector-shaped logo of social media you choose
 `size`          | *int*                                           | `32`                         	| The `size` attribute sets a size of an element
 `color`         | *hex*                                           | -     						            | The `color` attribute fills the shape with a color you choose
-`href`          | *string*                                        | -                             | The `href` attribute sets the target URL
-`newTab`        | *boolean*                                       | false                         | The `newTab` attribute opens the linked icon on new browser tab
 `title`         | *string*                                        | -                             | The `title` attribute sets the title that will be displayed as alternative text or hint
 
 ## Example
 
 ```html
-<social-media-icons icon="github" color="#bada55" size="320" href="https://github.com/hejty" new-tab></social-media-icons>
+<social-media-icons icon="github" color="#bada55" size="320"></social-media-icons>
 ```
 
 ## Contributing
